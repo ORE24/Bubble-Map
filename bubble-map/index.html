@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Global Pulse - Yesterday's Key Events</title>
+    <link rel="stylesheet" href="style.css">
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600&display=swap" rel="stylesheet">
+
+    <!-- D3 & TopoJSON -->
+    <script src="https://d3js.org/d3.v7.min.js"></script>
+    <script src="https://unpkg.com/topojson@3"></script>
+</head>
+<body>
+    <div id="app">
+        <header>
+            <h1>Global Pulse</h1>
+            <p>Yesterday's Key Events &middot; <span id="current-date"></span></p>
+        </header>
+
+        <main id="map-container">
+            <!-- SVG Map will be injected here -->
+            <div id="tooltip" class="tooltip hidden"></div>
+        </main>
+        
+        <footer>
+            <p>Powered by Mock Global News Service</p>
+        </footer>
+    </div>
+
+    <script type="module" src="./src/main.js"></script>
+</body>
+</html>
