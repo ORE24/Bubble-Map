@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>BubbleMap: Global News Cortex</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" crossorigin="">
+</head>
+<body>
+  <header class="header">
+    <nav class="nav-left">
+      <button class="icon-btn" aria-label="Menu" title="Menu">☰</button>
+      <button class="icon-btn active" aria-label="Map view" title="Map view">⊞</button>
+      <button class="icon-btn" aria-label="Documents" title="Documents">▤</button>
+      <button class="icon-btn" aria-label="Sources" title="Sources">⎔</button>
+      <button class="icon-btn" aria-label="Globe" title="Globe">◉</button>
+    </nav>
+    <h1 class="title">BubbleMap: Global News Cortex</h1>
+    <nav class="nav-right">
+      <button class="icon-btn" aria-label="Mute" title="Mute">🔇</button>
+      <button class="icon-btn" aria-label="Settings" title="Settings">⚙</button>
+      <button class="icon-btn" aria-label="Profile" title="Profile">👤</button>
+    </nav>
+  </header>
+
+  <main class="main">
+    <div id="map-container" class="map-container">
+      <div id="loading-overlay" class="loading-overlay" aria-live="polite" aria-busy="true" hidden>
+        <div class="loading-spinner" aria-hidden="true"></div>
+        <p class="loading-text">뉴스를 불러오는 중…</p>
+      </div>
+      <div id="error-overlay" class="error-overlay" aria-live="assertive" hidden>
+        <p class="error-message">뉴스를 불러오지 못했습니다.</p>
+        <button type="button" id="retry-btn" class="retry-btn">재시도</button>
+      </div>
+    </div>
+    <div id="bubble-tooltip" class="bubble-tooltip" aria-hidden="true"></div>
+
+    <aside class="summary-panel" id="summary-panel">
+      <h2 class="summary-title">NEWS SUMMARY</h2>
+      <h3 class="summary-headline" id="summary-headline">말풍선을 클릭하여 지역별 핵심 뉴스를 확인하세요</h3>
+      <div id="summary-news-list" class="summary-news-list" aria-live="polite"></div>
+      <div class="timeline-wrap">
+        <label class="timeline-label" for="timeline">Time</label>
+        <input type="range" id="timeline" class="timeline" min="0" max="100" value="100" step="1">
+        <div class="timeline-marks">
+          <span>0:00</span>
+          <span>3:00</span>
+          <span>6:00</span>
+          <span>9:00</span>
+          <span>12:00</span>
+        </div>
+      </div>
+    </aside>
+  </main>
+
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" crossorigin=""></script>
+  <script type="module" src="js/main.js"></script>
+</body>
+</html>
